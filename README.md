@@ -23,4 +23,4 @@ The transfered images will be stored in `./experiments/$experiment_name/test/` f
 
 ## Environment
 - Python 3.8.6
-- All the required packages are listed in the `requirements.txt`
+- All the required packages are listed in the `requirements.txt`.
