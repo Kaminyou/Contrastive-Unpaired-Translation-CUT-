@@ -20,3 +20,7 @@ Suppose you would like to transfer image from source domain `X` to the target do
 python3 inference.py
 ```
 The transfered images will be stored in `./experiments/$experiment_name/test/` folder.
+
+## Environment
+- Python 3.8.6
+- All the required packages are listed in the `requirements.txt`
