@@ -24,9 +24,9 @@ def main():
         Y_fake = model.inference(X)
 
         if config["INFERENCE_SETTING"]["SAVE_ORIGINAL_IMAGE"]:
-            save_image(reverse_image_normalize(X), os.path.join(config["EXPERIMENT_ROOT_PATH"], config["EXPERIMENT_NAME"], "inference", f"{Path(X_path[0]).stem}_X_{idx}.png"))
+            save_image(reverse_image_normalize(X), os.path.join(config["EXPERIMENT_ROOT_PATH"], config["EXPERIMENT_NAME"], "test", f"{Path(X_path[0]).stem}_X_{idx}.png"))
         
-        save_image(reverse_image_normalize(Y_fake), os.path.join(config["EXPERIMENT_ROOT_PATH"], config["EXPERIMENT_NAME"], "inference", f"{Path(X_path[0]).stem}_Y_fake_{idx}.png"))
+        save_image(reverse_image_normalize(Y_fake), os.path.join(config["EXPERIMENT_ROOT_PATH"], config["EXPERIMENT_NAME"], "test", f"{Path(X_path[0]).stem}_Y_fake_{idx}.png"))
 
 if __name__ == "__main__":
     main()

@@ -1,5 +1,5 @@
 EXPERIMENT_ROOT_PATH: "./experiments/"
-EXPERIMENT_NAME: "test"
+EXPERIMENT_NAME: "initial_try"
 DEVICE: "cuda"
 TRAINING_SETTING:
   TRAIN_DIR_X: "./data/trainX/"
