@@ -115,7 +115,7 @@ class BaseModel(ABC):
                 save_path = os.path.join(self.path_train, save_filename)
                 net = getattr(self, name)
 
-                torch.save(net.cpu().state_dict(), save_path)
+                torch.save(net.state_dict(), save_path)
 
     def load_networks(self, epoch):
         """Load all the networks from the disk.
