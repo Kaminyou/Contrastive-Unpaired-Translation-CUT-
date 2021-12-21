@@ -10,7 +10,7 @@ from utils.util import read_yaml_config, test_transforms, reverse_image_normaliz
 def main():
     config = read_yaml_config("./config.yaml")
 
-    model = ContrastiveModel()
+    model = ContrastiveModel(config)
 
     val_dataset = XInferenceDataset(root_X=config["INFERENCE_SETTING"]["TEST_DIR_X"], transform=test_transforms)
     val_loader = DataLoader(val_dataset, batch_size=1, shuffle=False, pin_memory=True)
