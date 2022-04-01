@@ -10,11 +10,18 @@ class XYDataset(Dataset):
         self.root_Y = root_Y
         self.transform = transform
 
-        self.X_images = os.listdir(root_X)
-        self.Y_images = os.listdir(root_Y)
+        self.X_images = self.listdir(root_X)
+        self.Y_images = self.listdir(root_Y)
         self.length_dataset = max(len(self.X_images), len(self.Y_images))
         self.X_len = len(self.X_images)
         self.Y_len = len(self.Y_images)
+    
+    def listdir(self, path):
+        files = []
+        for f in os.listdir(path):
+            if not f.startswith('.'): # to ignore .gitkeep
+                files.append(f)
+        return files
 
     def __len__(self):
         return self.length_dataset
