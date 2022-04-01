@@ -12,7 +12,7 @@ Suppose you would like to transfer image from source domain `X` to the target do
 3. Put `X_test` into `./data/testX`. 
 4. Put `Y` into `./data/trainY`.
 5. Modify `./config.yaml` if you would like to adjust some setting, or just keep the default setting.
-6. Execute `python3 train.py`.
+6. Execute `python3 train.py`. *You can use `python3 train.py --verbose` to see more info during training.*
 7. Some transfered examples will be generated during training. Please check the `./experiments/$experiment_name/train/` folder.
 
 ## Usage (Inference)

@@ -1,3 +1,4 @@
+import argparse
 import os
 from collections import defaultdict
 from torch.utils.data import DataLoader
@@ -7,7 +8,11 @@ from utils.dataset import XYDataset
 from utils.util import read_yaml_config, transforms, reverse_image_normalize
 
 def main():
-    config = read_yaml_config("./config.yaml")
+    parser = argparse.ArgumentParser(description="CUT UI2I framework")
+    parser.add_argument("-c","--config", default="./config.yaml", help="Path to the yaml config file")
+    parser.add_argument("-v","--verbose", help="Verbose mode", action="store_true")
+    args = parser.parse_args()
+    config = read_yaml_config(args.config)
     
     model = ContrastiveModel(config)
 
@@ -18,7 +23,9 @@ def main():
         out = defaultdict(int)
 
         for idx, data in enumerate(dataloader):
-            print(f"[Epoch {epoch}][Iter {idx}] Processing ...", end="\r")
+            if args.verbose:
+                print(f"[Epoch {epoch}][Iter {idx}] Processing ...", end="\r")
+                
             model.set_input(data)
             model.optimize_parameters()
 
